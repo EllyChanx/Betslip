@@ -1,0 +1,54 @@
+------------
+Instructions
+------------
+
+Create a simple betslip application in React, which broadly replicates the styles and functionality, as defined in the mock-up.png file.
+
+While you are free to create the application with any packages and resources that you’re familiar with, we are especially keen to see the following:
+
+* React with type checking, i.e. PropTypes, or ideally TypeScript
+* Unit tests written with Jest and Enzyme, or ideally React Testing Library
+
+------------
+Requirements
+------------
+
+Views: app should have two views – betslip and receipt
+Filter: betslip should handle filtering of bets – both over / under 2.0
+Input: betslip should handle stake inputs – with bet / stake added to betslip
+Submit: app should place bets – with receipt calculating / showing total stake
+
+-----
+Hints
+-----
+
+We are looking for clean code that you would be proud to submit to production. Ideally this should not require much feedback or iteration at the PR/MR stage.
+
+You should think carefully here about how you plan to write well-structured and consistent code, i.e. good abstractions, minimal repetition, and well formatted code. Tools such as ESLint and Prettier are helpful here.
+
+As this is a React application, we would encourage you to follow best practices. For example, aiming for declarative over imperative programming, and seeking to reduce side effects and impure functions etc.
+
+---
+API
+---
+
+The api exposes two endpoints:
+
+* /decimalOddsLessThanTwo
+* /decimalOddsMoreThanTwo
+
+The endpoints return a json response containing real Oddschecker bet data that has been grouped into bets with odds over 2.0 and under 2.0.
+
+---
+Dev
+---
+
+In the project directory run the following commands to setup the development environment:
+
+1. npm install
+2. npm run start-frontend
+3. npm run start-server
+
+Once these processes have been started you will be ready to start developing.
+
+The webpage for the website will be available on port 3000 whilst the api can be reached on port 4000 to request the bet data.
