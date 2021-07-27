@@ -12,7 +12,7 @@ function filterOdds (odds, isMoreThanTwo) {
 }
 
 app.get('/decimalOddsMoreThanTwo', (req, res) => {
-  const allowedBets = allBets.filter(b => filterOdds(b.odds, false).length)
+  const allowedBets = allBets.filter(b => filterOdds(b.odds, true).length)
   res.send(allowedBets)
 });
 
