@@ -2,33 +2,7 @@ import React, { useEffect, useState } from 'react'
 import './App.css'
 import { Card, Container } from 'semantic-ui-react';
 import { FilterValue } from './BetsFilter';
-
-export interface Odd {
-	bookmakerCode: string
-	eachWayTerms: string
-	clickoutUrl: string
-	oddsFractional: string
-	oddsDecimal: number
-	oddsUS: number
-	bookmakerBetId: string
-	suspended: boolean
-}
-
-export interface Bet {
-	name: string
-	genericName: string
-	bestOddsBookmakers: string
-	betId: number
-	map: string
-	odds: Odd[]
-}
-
-export type ServerParam = 'decimalOddsMoreThanTwo' | 'decimalOddsLessThanTwo'
-
-export interface AllowedOdds {
-	serverParams: ServerParam;
-	filterValue: FilterValue;
-}
+import { AllowedOdds, Bet, ServerParam } from './types';
 
 export const moreThanTwoOdds: AllowedOdds = { serverParams: 'decimalOddsMoreThanTwo', filterValue: 'More Than 2'}
 export const lessThanTwoOdds: AllowedOdds = { serverParams: 'decimalOddsLessThanTwo', filterValue: 'Less Than 2'}
