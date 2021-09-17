@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from 'react'
 import './App.css'
-import { Card, Container } from 'semantic-ui-react';
-import { FilterValue } from './BetsFilter';
-import { AllowedOdds, Bet, ServerParam } from './types';
+import { Card, Container } from 'semantic-ui-react'
+import { FilterValue } from './BetsFilter'
+import { AllowedOdds, Bet, ServerParam } from './types'
 
 export const moreThanTwoOdds: AllowedOdds = { serverParams: 'decimalOddsMoreThanTwo', filterValue: 'More Than 2'}
 export const lessThanTwoOdds: AllowedOdds = { serverParams: 'decimalOddsLessThanTwo', filterValue: 'Less Than 2'}

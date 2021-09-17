@@ -1,7 +1,7 @@
 import React from 'react'
 import Adapter from '@wojtekmaj/enzyme-adapter-react-17';
 import { configure } from 'enzyme';
-import { Bet } from './App';
+import { Bet } from './types';
 
 configure({ adapter: new Adapter() });
 
