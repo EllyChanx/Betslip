@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import './App.css'
-import { Card, Container } from 'semantic-ui-react'
-import { FilterValue } from './BetsFilter'
+import { Card, Container, Image } from 'semantic-ui-react'
+import { BetsFilter, FilterValue } from './BetsFilter'
 import { AllowedOdds, Bet, ServerParam } from './types'
 
 export const moreThanTwoOdds: AllowedOdds = { serverParams: 'decimalOddsMoreThanTwo', filterValue: 'More Than 2'}
@@ -19,17 +19,18 @@ function App() {
 
 	useEffect(() => {
 		if (filterValue === moreThanTwoOdds.filterValue) {
-			const a = fetchOddsData(moreThanTwoOdds.serverParams)
-			console.log(a)
+			fetchOddsData(moreThanTwoOdds.serverParams)
 		} else if (filterValue === lessThanTwoOdds.filterValue) {
-			const b = fetchOddsData(lessThanTwoOdds.serverParams)
-			console.log(b)
+			fetchOddsData(lessThanTwoOdds.serverParams)
 		}
 	}, [filterValue])
 
 	return (
 		<Container>
-			<Card.Header>{bets[0]?.name}</Card.Header>
+			<BetsFilter onChange={setFilterValue} selectedValue={filterValue} />
+			<Card fluid color='red' header='Option 1'>
+				<Card.Header>{bets[0]?.name}</Card.Header>
+			</Card>
 		</Container>
 	)
 }
