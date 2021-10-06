@@ -1,11 +1,11 @@
 import React, { useEffect, useState } from 'react'
 import './App.css'
-import { Card, Container, Image } from 'semantic-ui-react'
+import { Button, Card, Container } from 'semantic-ui-react'
 import { BetsFilter, FilterValue } from './BetsFilter'
 import { AllowedOdds, Bet, ServerParam } from './types'
 
-export const moreThanTwoOdds: AllowedOdds = { serverParams: 'decimalOddsMoreThanTwo', filterValue: 'More Than 2'}
-export const lessThanTwoOdds: AllowedOdds = { serverParams: 'decimalOddsLessThanTwo', filterValue: 'Less Than 2'}
+export const moreThanTwoOdds: AllowedOdds = { serverParams: 'decimalOddsMoreThanTwo', filterValue: 'More Than 2' }
+export const lessThanTwoOdds: AllowedOdds = { serverParams: 'decimalOddsLessThanTwo', filterValue: 'Less Than 2' }
 
 function App() {
 
@@ -25,11 +25,16 @@ function App() {
 		}
 	}, [filterValue])
 
+	const handleOnClick = () => {
+		return true
+	}
+
 	return (
 		<Container>
 			<BetsFilter onChange={setFilterValue} selectedValue={filterValue} />
-			<Card fluid color='red' header='Option 1'>
+			<Card fluid color="red">
 				<Card.Header>{bets[0]?.name}</Card.Header>
+				<Button onClick={handleOnClick}>Click Here</Button>
 			</Card>
 		</Container>
 	)

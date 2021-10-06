@@ -16,8 +16,8 @@ interface Props {
 
 export const BetsFilter: React.FC<Props> = ({ selectedValue, onChange }: Props) => {
 	const options: DropdownOption[] = [
-		{ key: 1, text: 'More Than 2', value: 'More Than 2'},
-		{ key: 2, text: 'Less Than 2', value: 'Less Than 2'},
+		{ key: 1, text: 'More Than 2', value: 'More Than 2' },
+		{ key: 2, text: 'Less Than 2', value: 'Less Than 2' },
 	]
 
 	const handleOnChange = (event: SyntheticEvent, value: DropdownProps) => {
